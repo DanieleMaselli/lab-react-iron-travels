@@ -1,7 +1,12 @@
 import logo from "./assets/logo.png";
+import travelPlansData from "./assets/travel-plans.json";
 import "./App.css";
+import { useState } from "react";
+import TravelList from "./components/TravelList";
 
 function App() {
+  const [plans, setPlans ] = useState(travelPlansData)
+
   return (
     <>
       <div>
@@ -11,7 +16,9 @@ function App() {
       <h3 className="text-iron">Tailored Travel Plans for Ironhackers</h3>
 
       {/* RENDER YOUR LIST COMPONENT HERE */}
-      
+      <TravelList plans={plans}/>
+
+     
     </>
   );
 }
